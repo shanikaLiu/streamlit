@@ -16,5 +16,5 @@ conn = st.experimental_connection('eiz_test', type='sql')
 # View the connection contents.
 conn
 
-a = conn.query('select id, companyName, email from accounts where id in (79,277,336,363,4904,911,2333,2677,5906,6682,6832)')
+a = conn.query('select id, companyName, email, credit, balance from accounts where id in (79,277,336,363,4904,911,2333,2677,5906,6682,6832);',ttl=600)
 st.dataframe(a)
