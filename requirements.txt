@@ -1,4 +1,4 @@
 streamlit
 pandas
-sqlalchemy
+sqlalchemy==1.4
 pymysql
