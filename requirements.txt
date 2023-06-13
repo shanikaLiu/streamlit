@@ -1,6 +1,6 @@
 streamlit
 pandas
-sqlalchemy==1.4.40
-mysqlclient==2.1.0
+SQLAlchemy
+mysqlclient
 pymysql
 timedelta
