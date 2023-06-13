@@ -1,4 +1,4 @@
 streamlit
 pandas
 sqlalchemy
-pymysql
+mysqlclient
