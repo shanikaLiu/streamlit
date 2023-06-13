@@ -10,7 +10,6 @@
 
 
 import streamlit as st
-import timedelta
 
 conn = st.experimental_connection('eiz_test', type='sql')
 
