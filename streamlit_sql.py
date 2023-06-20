@@ -17,8 +17,8 @@ db_host = 'master.ccub4ta9krao.ap-southeast-2.rds.amazonaws.com'
 db_port = 3306
 
 connect_args = {
-                'connect_timeout': 60,
-                'read_timeout': 90
+                'connect_timeout': 600,
+                'read_timeout': 900
                 }
 
 engine = create_engine(f'{db_type}://{db_user}:{db_passwd}@{db_host}:{db_port}/{db_name}',connect_args = connect_args)
