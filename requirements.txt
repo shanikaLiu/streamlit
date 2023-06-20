@@ -1,6 +1,2 @@
 streamlit
 pandas
-sqlalchemy==1.4
-pymysql
-mysql.connector
-st_files_connection
