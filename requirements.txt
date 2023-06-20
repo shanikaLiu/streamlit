@@ -3,4 +3,4 @@ pandas
 sqlalchemy==1.4
 pymysql
 mysql.connector
-mysqlclient
+mysqldb
