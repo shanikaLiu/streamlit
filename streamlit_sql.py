@@ -4,8 +4,8 @@ from sqlalchemy import create_engine, text
 
 db_type = 'mysql+pymysql'
 db_name = 'eiz_test'
-db_user = 'viewuser'
-db_passwd = ')5y)JHhqsFulugU!'
+db_user = 'eiz'
+db_passwd = 'Adgjl!2345'
 db_host = 'master.ccub4ta9krao.ap-southeast-2.rds.amazonaws.com'
 db_port = 3306
 
