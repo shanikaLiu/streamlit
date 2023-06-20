@@ -4,3 +4,5 @@ sqlalchemy
 datetime
 logging
 dateutil
+pytz
+configparser
