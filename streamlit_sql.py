@@ -1,7 +1,8 @@
 # streamlit_app.py
 
 import streamlit as st
-import mysql.connector
+import pandas as pd
+# import mysql.connector
 
 # Initialize connection.
 # Uses st.cache_resource to only run once.
@@ -25,6 +26,8 @@ import mysql.connector
 # for row in rows:
 #     st.write(f"{row[0]} has a :{row[1]}:")
 
-conn = st.experimental_connection('mysql',type='sql',ttl=3600)
-df = conn.query("SELECT * from accounts limit 10;")
+# conn = st.experimental_connection('mysql',type='sql',ttl=3600)
+# df = conn.query("SELECT * from accounts limit 10;")
+
+df = pd.read_csv('./test.csv')
 st.dataframe(df)
