@@ -1,38 +1,8 @@
-# streamlit_app.py
-
+import pandas as pd
 import streamlit as st
-# import pandas as pd
-# import mysql.connector
 
-# Initialize connection.
-# Uses st.cache_resource to only run once.
-# @st.cache_resource
-# def init_connection():
-#     return st.experimental_connection('mysql',type='sl')
+# 读取CSV文件
+df = pd.read_csv('test-files/test.csv')
 
-# conn = init_connection()
-
-# # Perform query.
-# # Uses st.cache_data to only rerun when the query changes or after 10 min.
-# @st.cache_data(ttl=3600)
-# def run_query(query):
-#     with conn.cursor() as cur:
-#         cur.execute(query)
-#         return cur.fetchall()
-
-# rows = run_query("SELECT * from accounts limit 10;")
-
-# # Print results.
-# for row in rows:
-#     st.write(f"{row[0]} has a :{row[1]}:")
-
-# conn = st.experimental_connection('mysql',type='sql',ttl=3600)
-# df = conn.query("SELECT * from accounts limit 10;")
-
-# df = pd.read_csv('test.csv')
-# st.dataframe(df)
-
-from st_files_connection import FilesConnection
-conn = st.experimental_connection('local', type=FilesConnection)
-conn
-st.write(conn.read("test.csv", input_format='csv'))
+# 在Streamlit应用程序中展示数据
+st.write(df)
