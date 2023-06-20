@@ -15,11 +15,6 @@ def main():
 
     # 在这里添加 Streamlit 的代码逻辑
     # ...
-
-if __name__ == '__main__':
-    main()
-
-
     qt = QueryTime()
     today_line = qt.formatted_today()['today_line']
 
@@ -135,3 +130,7 @@ if __name__ == '__main__':
     # this_week_target = int(1999)
     st.metric(label='Number of Prospects', value=num_of_cust)
     st.dataframe(df_filtered,hide_index=True)
+
+
+if __name__ == '__main__':
+    main()
