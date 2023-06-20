@@ -3,7 +3,6 @@ from src.results import Results
 from src.execute_query import ExecuteQuery
 from src.log import logger
 
-import os
 import datetime
 
 
@@ -16,8 +15,8 @@ week_end_time = qt.end_time()
 today_line = qt.formatted_today()['today_line']
 
 db = 'eiz_test'
-config_path = 'config\\db.ini'
-query = 'sql\\week.sql'
+config_path = 'config/db.ini'
+query = 'sql/week.sql'
 par = {'start_time': week_start_time,
        'end_time': week_end_time}
 
@@ -34,7 +33,7 @@ rs = Results(path=save_to)
 rs.file_path()
 
 
-log = logger(path=f'log\\{today_line}')
+log = logger(path=f'log/{today_line}')
 
 
 rs.df_with_header(filename=today_line,df=df)

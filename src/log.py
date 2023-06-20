@@ -20,7 +20,7 @@ def logger(path):
         os.makedirs(path)
 
     logging.basicConfig(
-                        filename=os.path.join(path,'log.log'),
+                        filename=f'{path}/log.log',
                         filemode='a',
                         format=standard_format,
                         level=logging.INFO
