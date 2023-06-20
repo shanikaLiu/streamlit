@@ -1,10 +1,26 @@
+# streamlit_app.py
+
 import streamlit as st
+import mysql.connector
 
+# Initialize connection.
+# Uses st.cache_resource to only run once.
+@st.cache_resource
+def init_connection():
+    return mysql.connector.connect(**st.secrets["mysql"])
 
-conn = st.experimental_connection('eiz_test', type='sql')
+conn = init_connection()
 
-# View the connection contents.
-conn
+# Perform query.
+# Uses st.cache_data to only rerun when the query changes or after 10 min.
+@st.cache_data(ttl=600)
+def run_query(query):
+    with conn.cursor() as cur:
+        cur.execute(query)
+        return cur.fetchall()
 
-a = conn.query('select id, companyName, email, credit, balance from accounts where id not in (1,284,317,513,911,2333,4832,1978,2677,3430,3793,3980,5474,5906,6572,6484,6681,6682,6684,6728,6734,6735) and credit > 0;',ttl=600)
-st.dataframe(a,hide_index=True)
+rows = run_query("SELECT * from accounts limit 100;")
+
+# Print results.
+for row in rows:
+    st.write(f"{row[0]} has a :{row[1]}:")
