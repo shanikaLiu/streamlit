@@ -5,4 +5,4 @@ import streamlit as st
 df = pd.read_csv('./test-files/test.csv')
 
 # 在Streamlit应用程序中展示数据
-st.write(df)
+st.dataframe(df)
