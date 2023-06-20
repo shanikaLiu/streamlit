@@ -25,6 +25,6 @@ import mysql.connector
 # for row in rows:
 #     st.write(f"{row[0]} has a :{row[1]}:")
 
-conn = st.experimental_connection('mysql',type='sql')
+conn = st.experimental_connection('mysql',type='sql',ttl=3600)
 df = conn.query("SELECT * from accounts limit 10;")
 st.dataframe(df)
