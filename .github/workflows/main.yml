@@ -1,5 +1,0 @@
-env:
-  DB_HOST: master.ccub4ta9krao.ap-southeast-2.rds.amazonaws.com
-  DB_PORT: 3306
-  DB_USERNAME: viewuser
-  DB_PASSWORD: )5y)JHhqsFulugU!
