@@ -29,5 +29,5 @@ import pandas as pd
 # conn = st.experimental_connection('mysql',type='sql',ttl=3600)
 # df = conn.query("SELECT * from accounts limit 10;")
 
-df = pd.read_csv('./test.csv')
+df = pd.read_csv('test.csv')
 st.dataframe(df)
