@@ -1,7 +1,7 @@
 # streamlit_app.py
 
 import streamlit as st
-import pandas as pd
+# import pandas as pd
 # import mysql.connector
 
 # Initialize connection.
@@ -29,5 +29,10 @@ import pandas as pd
 # conn = st.experimental_connection('mysql',type='sql',ttl=3600)
 # df = conn.query("SELECT * from accounts limit 10;")
 
-df = pd.read_csv('test.csv')
-st.dataframe(df)
+# df = pd.read_csv('test.csv')
+# st.dataframe(df)
+
+from st_files_connection import FilesConnection
+conn = st.experimental_connection('local', type=FilesConnection)
+conn
+st.write(conn.read("test.csv", input_format='csv'))
